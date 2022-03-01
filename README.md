@@ -11,7 +11,7 @@ Application server runs on port : 6161
 
 Ui link is : http://localhost:6161/conference/index.xhtml  
 
-Meetings can be added via ui input areas or json.   
+Meetings can be added via ui input areas or can be set by giving a json. Using json replaces everything and deletes old data.   
 
 Json example is as follows :
 
