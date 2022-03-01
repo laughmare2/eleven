@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+    <h:form>
+        <p:tabView>
+            <p:tab title="Meetings">
+            <p:panel>
+                <h:panelGrid columns="2">
+                    <h:panelGrid id="add-meeting" columns="1">
+
+                        <p:outputLabel for="meeting-name" value="Description"/>
+                        <p:inputText id="meeting-name" value="#{conferenceBean.name}"
+                                     required="true"/>
+                        <p:message for="meeting-name"/>
+
+                        <p:outputLabel for="meeting-length" value="Length"/>
+                        <p:selectOneMenu id="meeting-length" value="#{conferenceBean.length}">
+                            <f:selectItems value="#{conferenceBean.lengthList}" var="et" itemValue="#{et.value}" itemLabel="#{et.name}"/>
+                            <p:ajax event="change" process="@this" update="@form" listener="#{eventBean.changeEventType}" />
+                        </p:selectOneMenu>
+                        <p:message for="meeting-length"/>
+
+                        <p:commandButton value="Add Meeting" actionListener="#{conferenceBean.addMeeting()}"
+                                         update="@form" process="add-meeting"/>
+                        <p:commandButton value="Create Schedule" actionListener="#{conferenceBean.createSchedule()}"
+                                         update="@form" process="@this"/>
+                    </h:panelGrid>
+                    <h:panelGrid style="padding-left:100px;">
+                        <p:outputLabel for="meeting-json" value="Json"/>
+                        <p:inputTextarea autoResize="false" rows="6" cols="33" id="meeting-json" value="#{conferenceBean.json}"/>
+                        <p:message for="meeting-json"/>
+                        <p:commandButton value="Create Meetings From Json" actionListener="#{conferenceBean.setMeetingsFromJson()}"
+                                         update="@form" process="@this, meeting-json"/>
+                    </h:panelGrid>
+                </h:panelGrid>
+            </p:panel>
+
+            <p:dataTable id="meeting-table" var="mtn" value="#{conferenceBean.meetingList}">
+
+                <p:column headerText="Description">
+                    <h:outputText value="#{mtn.name}"/>
+                </p:column>
+
+                <p:column headerText="Length">
+                    <h:outputText value="#{mtn.length}"/>
+                </p:column>
+
+                <p:column headerText="Remove" style="width:15%">
+                    <p:commandButton value="X" actionListener="#{conferenceBean.removeMeeting(mtn)}"
+                                     update="@form"/>
+                </p:column>
+            </p:dataTable>
+
+            </p:tab>
+            <p:tab title="Schedule">
+                <p:dataTable var="trc" value="#{conferenceBean.schedule}">
+                    <p:column headerText="#" style="width:20px">
+                        <h:outputText value="#{trc.trackNo}"/>
+                    </p:column>
+                    <p:column headerText="First Half">
+                        <p:dataTable var="fhlf" value="#{trc.firstHalf}">
+                            <p:column headerText="Description">
+                                <h:outputText value="#{fhlf.name}"/>
+                            </p:column>
+                            <p:column headerText="Start Time">
+                                <h:outputText value="#{fhlf.startTime}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:column>
+                    <p:column headerText="Lunch" style="width:65px">
+                        <h:outputText value="12:00AM"/>
+                    </p:column>
+                    <p:column headerText="Second Half">
+                        <p:dataTable var="shlf" value="#{trc.secondHalf}">
+                            <p:column headerText="Description">
+                                <h:outputText value="#{shlf.name}"/>
+                            </p:column>
+                            <p:column headerText="Start Time">
+                                <h:outputText value="#{shlf.startTime}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:column>
+                </p:dataTable>
+            </p:tab>
+        </p:tabView>
+    </h:form>
+</h:body>
+</html>

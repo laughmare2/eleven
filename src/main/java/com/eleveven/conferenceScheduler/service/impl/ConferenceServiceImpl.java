@@ -86,19 +86,19 @@ public class ConferenceServiceImpl implements ConferenceService {
         return halfMeetings;
     }
 
-    void calculateHalfOfMeeting(Long totalLength, List<Meeting> unassignedMeetings, List<Meeting> halfMeetings){
+    boolean calculateHalfOfMeeting(Long totalLength, List<Meeting> unassignedMeetings, List<Meeting> halfMeetings){
         if (addMeetingToHalf(totalLength,
                 unassignedMeetings,
                 halfMeetings)
         ) {
-            return;
+            return true;
         }else{
             if(maxLengthInMinutes == 0){
-                return;
+                return false;
             }
             maxLengthInMinutes -= LIGHTNING_LENGTH;
             totalLength = 0L;
-            calculateHalfOfMeeting(totalLength,
+            return calculateHalfOfMeeting(totalLength,
                     unassignedMeetings,
                     halfMeetings);
         }
