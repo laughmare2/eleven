@@ -16,82 +16,81 @@ Meetings can be added via ui input areas or json.
 Json example is as follows :
 
 [  
-	{  
-		"name":"Architecting Your Codebase",  
-		"length":60  
-	},  
-	{  
-		"name":"Overdoing it in Python",  
-		"length":45  
-	},  
-	{  
-		"name":"Flavors of Concurrency in Java",  
-		"length":30  
-	},  
-	{  
-		"name":"Ruby Errors from Mismatched Gem Versions",  
-		"length":45  
-	},  
-	{  
-		"name":"JUnit 5 - Shaping the Future of Testing on the JVM",  
-		"length":45  
-	},  
-	{  
-		"name":"Cloud Native Java",  
-		"length":5  
-	},  
-	{  
-		"name":"Communicating Over Distance",  
-		"length":60  
-	},  
-	{  
-		"name":"AWS Technical Essentials",  
-		"length":45  
-	},  
-	{  
-		"name":"Continuous Delivery",  
-		"length":30  
-	},  
-	{  
-		"name":"Monitoring Reactive Applications",  
-		"length":30  
-	},  
-	{  
-		"name":"Pair Programming vs Noise",  
-		"length":45  
-	},  
-	{  
-		"name":"Rails Magic",  
-		"length":60  
-	},  
-	{  
-		"name":"Microservices \"Just Right\"",  
-		"length":60  
-	},  
-	{  
-		"name":"Clojure Ate Scala (on my project)",  
-		"length":45  
-	},  
-	{  
-		"name":"Perfect Scalability",  
-		"length":30  
-	},  
-	{  
-		"name":"Apache Spark",  
-		"length":30  
-	},  
-	{  
-		"name":"Async Testing on JVM",  
-		"length":60  
-	},  
-	{  
-		"name":"A World Without HackerNews",  
-		"length":30  
-	},  
-	{  
-		"name":"User Interface CSS in Apps",  
-		"length":30  
-	}  
+&emsp;{  
+&emsp;&emsp;"name":"Architecting Your Codebase",  
+&emsp;&emsp;"length":60  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Overdoing it in Python",  
+&emsp;&emsp;"length":45  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Flavors of Concurrency in Java",  
+&emsp;&emsp;"length":30  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Ruby Errors from Mismatched Gem Versions",  
+&emsp;&emsp;"length":45  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"JUnit 5 - Shaping the Future of Testing on the JVM",  
+&emsp;&emsp;"length":45  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Cloud Native Java",  
+&emsp;&emsp;"length":5  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Communicating Over Distance",  
+&emsp;&emsp;"length":60  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"AWS Technical Essentials",  
+&emsp;&emsp;"length":45  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Continuous Delivery",  
+&emsp;&emsp;"length":30  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Monitoring Reactive Applications",  
+&emsp;&emsp;"length":30  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Pair Programming vs Noise",  
+&emsp;&emsp;"length":45  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Rails Magic",  
+&emsp;&emsp;"length":60  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Microservices \"Just Right\"",  
+&emsp;&emsp;"length":60  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Clojure Ate Scala (on my project)",  
+&emsp;&emsp;"length":45  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Perfect Scalability",  
+&emsp;&emsp;"length":30  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Apache Spark",  
+&emsp;&emsp;"length":30  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"Async Testing on JVM",  
+&emsp;&emsp;"length":60  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"A World Without HackerNews",  
+&emsp;&emsp;"length":30  
+&emsp;},  
+&emsp;{  
+&emsp;&emsp;"name":"User Interface CSS in Apps",  
+&emsp;&emsp;"length":30  
+&emsp;}  
 ]  
-
 
