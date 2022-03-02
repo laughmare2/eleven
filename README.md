@@ -13,6 +13,10 @@ Ui link is : http://localhost:6161/conference/index.xhtml
 
 Meetings can be added via ui input areas or can be set by giving a json. Using json replaces everything and deletes old data.   
 
+There is also a rest api that takkes json as input and gives schedule as a result :  
+  
+http://localhost:6161/conference/scheduleMeeting/
+
 Json example is as follows :
 
 [  
