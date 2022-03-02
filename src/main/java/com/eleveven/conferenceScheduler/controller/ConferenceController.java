@@ -5,10 +5,7 @@ import com.eleveven.conferenceScheduler.model.Track;
 import com.eleveven.conferenceScheduler.service.ConferenceService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +17,9 @@ public class ConferenceController {
     ConferenceService conferenceService;
 
     @GetMapping("/scheduleMeeting")
-    List<Track> scheduleMeeting(@RequestBody List<Meeting> meetingList) {
+    List<Track> scheduleMeeting(@RequestBody List<Meeting> meetingList) throws Exception{
         return conferenceService.scheduleMeeting(meetingList);
     }
+
 
 }

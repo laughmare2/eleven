@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ConferenceService{
 
-    List<Track> scheduleMeeting(List<Meeting> meetingList);
+    List<Track> scheduleMeeting(List<Meeting> meetingList) throws Exception;
 
 }

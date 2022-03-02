@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import static com.eleveven.conferenceScheduler.util.ConferenceUtil.*;
 import static com.eleveven.conferenceScheduler.util.Constants.*;
+import static com.eleveven.conferenceScheduler.util.ConferenceValidator.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,8 @@ public class ConferenceServiceImpl implements ConferenceService {
     private Long maxLengthInMinutes;
 
     @Override
-    public List<Track> scheduleMeeting(List<Meeting> meetingList){
+    public List<Track> scheduleMeeting(List<Meeting> meetingList) throws Exception{
+        validateMeetings(meetingList);
         initializeForSchedule(meetingList);
         createTrackList();
         createStartTimeForTracks();

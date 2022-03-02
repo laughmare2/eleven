@@ -8,6 +8,7 @@
 </h:head>
 <h:body>
     <h:form>
+        <p:growl id="growl" showDetail="true" />
         <p:tabView>
             <p:tab title="Meetings">
             <p:panel>
@@ -15,8 +16,7 @@
                     <h:panelGrid id="add-meeting" columns="1">
 
                         <p:outputLabel for="meeting-name" value="Description"/>
-                        <p:inputText id="meeting-name" value="#{conferenceBean.name}"
-                                     required="true"/>
+                        <p:inputText id="meeting-name" value="#{conferenceBean.name}"/>
                         <p:message for="meeting-name"/>
 
                         <p:outputLabel for="meeting-length" value="Length"/>
@@ -37,6 +37,8 @@
                         <p:message for="meeting-json"/>
                         <p:commandButton value="Create Meetings From Json" actionListener="#{conferenceBean.setMeetingsFromJson()}"
                                          update="@form" process="@this, meeting-json"/>
+                        <p:commandButton value="Copy JSON Template To Clipboard" actionListener="#{conferenceBean.copyJsonTemplateToClipboard()}"
+                                         update="@form" process="@this"/>
                     </h:panelGrid>
                 </h:panelGrid>
             </p:panel>

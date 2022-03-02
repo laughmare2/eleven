@@ -19,7 +19,7 @@ public class ConferenceTest {
     public ConferenceService conferenceService;
 
     @Test
-    public void conferenceTest(){
+    public void conferenceTest() throws Exception{
         List<Track> schedule = conferenceService.scheduleMeeting(createMeetingList());
         assertEquals(schedule, createTrackResult());
     }

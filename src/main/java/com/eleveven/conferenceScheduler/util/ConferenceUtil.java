@@ -3,7 +3,11 @@ package com.eleveven.conferenceScheduler.util;
 import com.eleveven.conferenceScheduler.model.Meeting;
 
 import static com.eleveven.conferenceScheduler.util.Constants.*;
+import static com.eleveven.conferenceScheduler.util.ConferenceValidator.*;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,4 +71,18 @@ public class ConferenceUtil {
         }
         return startTimeString;
     }
+
+    private static Clipboard getSystemClipboard()
+    {
+        Toolkit defaultToolkit = Toolkit.getDefaultToolkit();
+        return defaultToolkit.getSystemClipboard();
+    }
+
+    public static void copyToClipboard(String text)
+    {
+        System.setProperty("java.awt.headless", "false");
+        Clipboard clipboard = getSystemClipboard();
+        clipboard.setContents(new StringSelection(text), null);
+    }
+
 }

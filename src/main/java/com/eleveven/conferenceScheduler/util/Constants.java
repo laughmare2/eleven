@@ -21,4 +21,19 @@ public class Constants {
     public static String MINUTE = " Min";
     public static String LIGHTNING = "Lightning";
 
+    public static String JSON_TEMPLATE="[  \n" +
+            "\t{  \n" +
+            "\t\t\"name\":\"Meeting1\",  \n" +
+            "\t\t\"length\":60  \n" +
+            "\t}, \n" +
+            "\t{  \n" +
+            "\t\t\"name\":\"Meeting2\",  \n" +
+            "\t\t\"length\":60  \n" +
+            "\t}\n" +
+            "]  ";
+
+    public static String ERROR_SUMMARY="Error Occured";
+    public static String CLIPBOARD_SUMMARY="INFO";
+    public static String CLIPBOARD_MESSAGE="Copied Template To Clipboard";
+
 }
