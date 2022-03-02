@@ -18,4 +18,7 @@ public class Constants {
     public static String ANTE_MERIDIEM = "AM";
     public static String POST_MERIDIEM = "PM";
 
+    public static String MINUTE = " Min";
+    public static String LIGHTNING = "Lightning";
+
 }

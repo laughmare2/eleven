@@ -4,6 +4,8 @@ import com.eleveven.conferenceScheduler.model.Length;
 import com.eleveven.conferenceScheduler.model.Meeting;
 import com.eleveven.conferenceScheduler.model.Track;
 import com.eleveven.conferenceScheduler.service.ConferenceService;
+import static com.eleveven.conferenceScheduler.util.Constants.*;
+import static com.eleveven.conferenceScheduler.util.ConferenceUtil.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
@@ -26,7 +28,7 @@ import java.util.List;
 @Setter
 public class ConferenceBean implements Serializable {
 
-    private static final long serialVersionUID = 4085285875380136779L;
+    private static final long serialVersionUID = 1L;
 
     @Autowired
     public ConferenceService conferenceService;
@@ -49,11 +51,11 @@ public class ConferenceBean implements Serializable {
         Meeting meeting = new Meeting();
         meeting.setLength(length);
         meeting.setName(name);
-        meetingList.add(meeting);
+        addMeetingToList(meeting, meetingList);
     }
 
     public void removeMeeting(Meeting meeting){
-        meetingList.remove(meeting);
+        removeMeetingFromList(meeting, meetingList);
     }
 
     public void createSchedule(){
@@ -62,11 +64,11 @@ public class ConferenceBean implements Serializable {
 
     public void initLengthList(){
         lengthList = new ArrayList<>();
-        Long lengthValue = 5L;
-        lengthList.add(new Length("Lightning", lengthValue));
-        while(lengthValue < 60){
-            lengthValue += 5L;
-            lengthList.add(new Length(lengthValue + " Min", lengthValue));
+        Long lengthValue = LIGHTNING_LENGTH;
+        lengthList.add(new Length(LIGHTNING, lengthValue));
+        while(lengthValue < MINUTES_IN_AN_HOUR){
+            lengthValue += LIGHTNING_LENGTH;
+            lengthList.add(new Length(lengthValue + MINUTE, lengthValue));
         }
     }
 
